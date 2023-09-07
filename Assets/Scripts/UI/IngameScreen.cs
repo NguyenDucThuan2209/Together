@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class IngameScreen : UIScreen
 {
     [SerializeField] Text m_scoreText;
+    [SerializeField] Text m_bestScoreText;
+
     private bool m_soundState = false;
     private bool m_musicState = false;
 
@@ -16,9 +18,25 @@ public class IngameScreen : UIScreen
         m_soundState = SoundManager.Instance.SoundState;
         m_musicState = SoundManager.Instance.MusicState;
     }
-    public void SetScoreText(int score)
+    public void SetScoreText(int score, int highScore = -1)
     {
         m_scoreText.text = score.ToString();
+
+        if (highScore < 0) return;
+        if (highScore < 10)
+        {
+            m_bestScoreText.rectTransform.anchoredPosition = new Vector2(55, 55);
+        }
+        else if (highScore < 100)
+        {
+            m_bestScoreText.rectTransform.anchoredPosition = new Vector2(50, 55);
+
+        }
+        else
+        {
+            m_bestScoreText.rectTransform.anchoredPosition = new Vector2(45, 55);
+        }
+        m_bestScoreText.text = "BEST " + highScore;
     }
 
     public void OnHomeButtonPressed()
