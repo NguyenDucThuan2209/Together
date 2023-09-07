@@ -6,10 +6,51 @@ public class Number : MonoBehaviour
 {
     [SerializeField] int m_id;
     [SerializeField] Vector3 m_size;
+    [SerializeField] Collider2D m_collider;
     [SerializeField] SpriteRenderer m_sprite;
     [SerializeField] Sprite[] m_numberSprite;
 
+    private bool m_isMouseDrag = false;
+    private List<Transform> m_collisions = new List<Transform>();
+
     public int ID => m_id;
+
+    private void OnMouseDown()
+    {
+        Debug.LogWarning("Number choosed: " + transform.name);
+        
+        m_isMouseDrag = true;
+    }
+    private void OnMouseDrag()
+    {
+        Debug.LogWarning("Number dragged: " + transform.name);
+
+        var currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        currentPosition.z = 0;
+
+        transform.position = currentPosition;
+    }
+    private void OnMouseUp()
+    {
+        Debug.LogWarning("Number dropped: " + transform.name);
+
+        m_isMouseDrag = false;
+        var index = 0;
+        var distance = float.MaxValue;
+        for (int i = 0; i < m_collisions.Count; i++)
+        {
+            if (Vector3.Distance(transform.position, m_collisions[i].position) < distance)
+            {
+                distance = Vector3.Distance(transform.position, m_collisions[i].position);
+                index = i;
+            }
+        }
+        transform.position = m_collisions[index].position;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        m_collisions.Add(collision.transform);
+    }
 
     private IEnumerator IE_Translate(Transform obj, Vector3 start, Vector3 end, float duration, System.Action callbacks = null)
     {

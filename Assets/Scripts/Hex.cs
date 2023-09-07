@@ -31,7 +31,7 @@ public class Hex : MonoBehaviour
             {
                 neighborSameIDs[i].MergeWithNumber(m_number.transform);
             }
-            m_number.IncreaseNumber();
+            m_number.IncreaseNumber(() => OnAttachNumber());
         }
     }
     public void MergeWithNumber(Transform target)
