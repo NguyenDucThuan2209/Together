@@ -1,0 +1,840 @@
+fileFormatVersion: 2
+guid: 6dc5f9215b9558446afacb18deefbd66
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Background
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 849
+        width: 1446
+        height: 3206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6e9045838f5c54e9f86ed8f40c3b1e
+      internalID: 891657455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonReplay
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 3549
+        width: 376
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79270b9e008da524f9fdfa178c65eb7b
+      internalID: -831135304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconReplay
+      rect:
+        serializedVersion: 2
+        x: 2821
+        y: 3793
+        width: 186
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f699927ffb201f1488d54afaf4db6441
+      internalID: -1836248741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconHome
+      rect:
+        serializedVersion: 2
+        x: 3105
+        y: 3795
+        width: 186
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a757b45eb0aac439ff15389f1b48c0
+      internalID: 19336680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTick
+      rect:
+        serializedVersion: 2
+        x: 3529
+        y: 3737
+        width: 238
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81eff73c3f0ca8d458df81c54801bde2
+      internalID: -1911110074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconMusic
+      rect:
+        serializedVersion: 2
+        x: 2837
+        y: 3513
+        width: 148
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df618fac5505e1d4ebd8e7c5ab568059
+      internalID: 2093303808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconSound
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 3499
+        width: 189
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a87e5a9d2fa024c947e6fb25ccda33
+      internalID: -1187328748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconBack
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 3405
+        width: 282
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c518291fb813c02479a2b6fe8b4bb632
+      internalID: 828532036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonMusic
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 2909
+        width: 376
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e43466b997719419a137d789f9ae8f
+      internalID: -2141143843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonHome
+      rect:
+        serializedVersion: 2
+        x: 2149
+        y: 2269
+        width: 376
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c81b8b749ea24a4c87c9a85d120ddad
+      internalID: -2116086096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonSound
+      rect:
+        serializedVersion: 2
+        x: 2149
+        y: 1657
+        width: 376
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e470d15620b85041a955d4f74f9d0c4
+      internalID: -843114638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 1655
+        width: 246
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b7d53fa5bd881439b0d5e8709e9ce5
+      internalID: -1753662406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8
+      rect:
+        serializedVersion: 2
+        x: 3327
+        y: 1655
+        width: 250
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca500bc0ca82e8449e7cb43fdcf7be6
+      internalID: -848960772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7
+      rect:
+        serializedVersion: 2
+        x: 3719
+        y: 1655
+        width: 250
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49944500ddd811040996ac531a674172
+      internalID: 892167600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonPlay
+      rect:
+        serializedVersion: 2
+        x: 2149
+        y: 1077
+        width: 376
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf9e7237a6e096458ceee33431e08f9
+      internalID: -972479133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4
+      rect:
+        serializedVersion: 2
+        x: 2935
+        y: 1239
+        width: 250
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2a60091a226e243b4a01bc56a353bc
+      internalID: -493345215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5
+      rect:
+        serializedVersion: 2
+        x: 3335
+        y: 1243
+        width: 250
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47929d6bb24a5d41bad14df749113be
+      internalID: 241233343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6
+      rect:
+        serializedVersion: 2
+        x: 3719
+        y: 1239
+        width: 250
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7be9d0e545f684fb40c13f49d85816
+      internalID: 421120197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 803
+        width: 246
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583e81a42ed60204880e41e3f485b5bd
+      internalID: -1974810932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2
+      rect:
+        serializedVersion: 2
+        x: 3327
+        y: 807
+        width: 250
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a851bff30a46214b8284372735e2782
+      internalID: -504298944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1
+      rect:
+        serializedVersion: 2
+        x: 3719
+        y: 803
+        width: 250
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc703ea587d239b4b94cebca9abb1ccf
+      internalID: 1884197245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconLost
+      rect:
+        serializedVersion: 2
+        x: 2477
+        y: 67
+        width: 674
+        height: 676
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00755741edddfc44b433ceef15a7e07
+      internalID: -1434570676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconWin
+      rect:
+        serializedVersion: 2
+        x: 3348
+        y: 65
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3348d49ddbd124e88d058e1ef6b66f
+      internalID: -2030656047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconMenu
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 2024
+        width: 1373
+        height: 1216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c345aac6c34d59459b191612a26df1e
+      internalID: 1192944414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapHard
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 97
+        width: 693
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0228899ab735f0f46af0c71ceed0e621
+      internalID: 1865908619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapMedium
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 95
+        width: 562
+        height: 623
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff300b823cba0454489710e9ecf11883
+      internalID: -1332940758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapEasy
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 137
+        width: 573
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e89afb6ed80e34a86c29ee74fd4887
+      internalID: 698354095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonEmpty
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 3529
+        width: 376
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e9681367925e5499bbeb69558181d0
+      internalID: 1243580542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonSetting
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 2911
+        width: 376
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522859b292b17754abf560641442e61b
+      internalID: 1739941803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      1: 1884197245
+      2: -504298944
+      3: -1974810932
+      4: -493345215
+      5: 241233343
+      6: 421120197
+      7: 892167600
+      8: -848960772
+      9: -1753662406
+      Background: 891657455
+      ButtonEmpty: 1243580542
+      ButtonHome: -2116086096
+      ButtonMusic: -2141143843
+      ButtonPlay: -972479133
+      ButtonReplay: -831135304
+      ButtonSetting: 1739941803
+      ButtonSound: -843114638
+      IconBack: 828532036
+      IconHome: 19336680
+      IconLost: -1434570676
+      IconMenu: 1192944414
+      IconMusic: 2093303808
+      IconReplay: -1836248741
+      IconSound: -1187328748
+      IconTick: -1911110074
+      IconWin: -2030656047
+      MapEasy: 698354095
+      MapHard: 1865908619
+      MapMedium: -1332940758
+      UIKIT_12: 224107995
+      UIKIT_13: 289988789
+      UIKIT_14: -2049523309
+      UIKIT_15: 835307704
+      UIKIT_16: -1396912594
+      UIKIT_17: 108228653
+      UIKIT_18: -1200887461
+      UIKIT_20: -1797467516
+      UIKIT_21: -373377897
+      UIKIT_22: 298948291
+      UIKIT_23: -92154373
+      UIKIT_24: -1181773715
+      UIKIT_25: 1115364470
+      UIKIT_26: -234343374
+      UIKIT_27: -18090119
+      UIKIT_28: -1957146537
+      UIKIT_30: -332571006
+      UIKIT_31: 1315716375
+      UIKIT_32: 1407337175
+      UIKIT_43: -1903592112
+      UIKIT_44: -1844926610
+      UIKIT_45: -1409327748
+      UIKIT_46: -1855709753
+      UIKIT_47: -492951256
+      UIKIT_48: 702640725
+      UIKIT_49: -1838245968
+      UIKIT_50: -1100138995
+      UIKIT_51: -1554503511
+      UIKIT_52: -1109895409
+      UIKIT_53: 1110834168
+      UIKIT_54: -191875041
+      UIKIT_55: -175767628
+      UIKIT_56: -1886413536
+      UIKIT_57: -1204202923
+      UIKIT_60: 1690487290
+      UIKIT_61: -981637853
+      UIKIT_62: -1413858114
+      UIKIT_63: 960919042
+      UIKIT_64: 794689031
+      UIKIT_65: -1454318419
+      UIKIT_66: 1012601219
+      UIKIT_67: -10823507
+      UIKIT_68: 2139977512
+      UIKIT_69: 1518345017
+      UIKIT_70: 992986474
+      UIKIT_71: -235265738
+      UIKIT_72: -1546208831
+      UIKIT_73: -1412143917
+      UIKIT_74: 841162652
+      UIKIT_75: -672363607
+      UIKIT_76: -1904551665
+      UIKIT_77: -932852961
+      UIKIT_78: -665124081
+      UIKIT_79: 223100589
+      UIKIT_80: -1028112143
+      UIKIT_81: 768823095
+      UIKIT_82: -1137379428
+      UIKIT_83: 1323647062
+      UIKIT_84: -277529065
+      UIKIT_85: 1694815414
+      UIKIT_86: -295672720
+      UIKIT_87: -478120972
+      UIKIT_88: -1625136436
+      UIKIT_89: 1136351747
+      UIKIT_9: 7783796
+      UIKIT_90: -1148506073
+      UIKIT_91: 1099173775
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
