@@ -10,21 +10,16 @@ public class Number : MonoBehaviour
     [SerializeField] SpriteRenderer m_sprite;
     [SerializeField] Sprite[] m_numberSprite;
 
-    private bool m_isMouseDrag = false;
     private List<Hex> m_collisions = new List<Hex>();
 
     public int ID => m_id;
+    public Collider2D Collider => m_collider;
 
     private void OnMouseDown()
-    {
-        Debug.LogWarning("Number choosed: " + transform.name);
-        
-        m_isMouseDrag = true;
+    {        
     }
     private void OnMouseDrag()
     {
-        Debug.LogWarning("Number dragged: " + transform.name);
-
         var currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         currentPosition.z = 0;
 
@@ -32,10 +27,7 @@ public class Number : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        Debug.LogWarning("Number dropped: " + transform.name);
-
-        m_isMouseDrag = false;
-        var index = 0;
+        var index = -1;
         var distance = float.MaxValue;
         for (int i = 0; i < m_collisions.Count; i++)
         {
@@ -45,8 +37,12 @@ public class Number : MonoBehaviour
                 index = i;
             }
         }
-        transform.position = m_collisions[index].transform.position;
-        m_collisions[index].OnAttachNumber(this);
+
+        if (index >= 0)
+        {
+            transform.position = m_collisions[index].transform.position;
+            m_collisions[index].OnAttachNumber(this);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -80,23 +76,21 @@ public class Number : MonoBehaviour
         obj.localScale = end;
         callbacks?.Invoke();
     }
-    private void Increase(System.Action callback = null)
+    private void Increase()
     {
         transform.localScale = m_size;
         m_sprite.sprite = m_numberSprite[m_id - 1];
-
-        callback?.Invoke();
     }
 
-    public void IncreaseNumber(System.Action callback = null)
+    public void IncreaseNumber()
     {
         m_id++;
-        StartCoroutine(IE_Scale(transform, m_size, Vector3.zero, 0.5f, () => Increase(callback)));
+        StartCoroutine(IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Increase()));
     }
     public void MergeWithNumber(Transform target)
     {
-        StartCoroutine(IE_Translate(transform, transform.position, target.position, 0.5f));
-        StartCoroutine(IE_Scale(transform, m_size, Vector3.zero, 0.5f, () => Destroy(gameObject)));
+        StartCoroutine(IE_Translate(transform, transform.position, target.position, 0.25f));
+        StartCoroutine(IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Destroy(gameObject)));
     }
     public void InitializeNumber(int id = -1)
     {

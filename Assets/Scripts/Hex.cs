@@ -6,19 +6,20 @@ public class Hex : MonoBehaviour
 {
     [SerializeField] float m_neighborRadius = 1.5f;
     [SerializeField] Collider2D m_collider;
-    
-    private List<Hex> m_neighbor;
+
+
     private Number m_number;
+    private List<Hex> m_neighbor;
+    private MapManager m_mapManager;
 
     public Number Number => m_number;
+    public List<Hex> Neighbors => m_neighbor;
+    public bool IsHoldNumber => m_number != null;
 
-    private void Start()
-    {
-        InitializeHex();
-    }
 
-    public void InitializeHex()
+    public void InitializeHex(MapManager mapManager)
     {
+        m_mapManager = mapManager;
         m_neighbor = new List<Hex>();
         var objects = Physics2D.OverlapCircleAll(transform.position, m_neighborRadius);
         foreach (var obj in objects)
@@ -33,25 +34,9 @@ public class Hex : MonoBehaviour
     {
         m_collider.enabled = false;
         m_number = (number != null)? number : m_number;
+        m_number.Collider.enabled = false;
 
-        var neighborSameIDs = new List<Number>();
-        for (int i = 0; i < m_neighbor.Count; i++)
-        {
-            if (m_neighbor[i].Number == null) return;
-            if (m_neighbor[i].Number.ID == m_number.ID)
-            {
-                neighborSameIDs.Add(m_neighbor[i].Number);
-            }
-        }
-
-        if (neighborSameIDs.Count >= 3)
-        {
-            for (int i = 0; i < neighborSameIDs.Count; i++)
-            {
-                neighborSameIDs[i].MergeWithNumber(m_number.transform);
-            }
-            m_number.IncreaseNumber(() => OnAttachNumber());
-        }
+        m_mapManager.AttachNumber(this);
     }
     public void MergeWithNumber(Transform target)
     {
