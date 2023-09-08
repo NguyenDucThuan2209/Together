@@ -11,7 +11,7 @@ public class Number : MonoBehaviour
     [SerializeField] Sprite[] m_numberSprite;
 
     private bool m_isMouseDrag = false;
-    private List<Transform> m_collisions = new List<Transform>();
+    private List<Hex> m_collisions = new List<Hex>();
 
     public int ID => m_id;
 
@@ -39,17 +39,21 @@ public class Number : MonoBehaviour
         var distance = float.MaxValue;
         for (int i = 0; i < m_collisions.Count; i++)
         {
-            if (Vector3.Distance(transform.position, m_collisions[i].position) < distance)
+            if (Vector3.Distance(transform.position, m_collisions[i].transform.position) < distance)
             {
-                distance = Vector3.Distance(transform.position, m_collisions[i].position);
+                distance = Vector3.Distance(transform.position, m_collisions[i].transform.position);
                 index = i;
             }
         }
-        transform.position = m_collisions[index].position;
+        transform.position = m_collisions[index].transform.position;
+        m_collisions[index].OnAttachNumber(this);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        m_collisions.Add(collision.transform);
+        if (collision.TryGetComponent(out Hex hex))
+        {
+            m_collisions.Add(hex);
+        }
     }
 
     private IEnumerator IE_Translate(Transform obj, Vector3 start, Vector3 end, float duration, System.Action callbacks = null)
@@ -93,5 +97,10 @@ public class Number : MonoBehaviour
     {
         StartCoroutine(IE_Translate(transform, transform.position, target.position, 0.5f));
         StartCoroutine(IE_Scale(transform, m_size, Vector3.zero, 0.5f, () => Destroy(gameObject)));
+    }
+    public void InitializeNumber(int id = -1)
+    {
+        m_id = (id > 0) ? id : m_id;
+        m_sprite.sprite = m_numberSprite[id - 1];
     }
 }
