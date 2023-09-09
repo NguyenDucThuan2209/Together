@@ -796,6 +796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 992964148655554373, guid: 33cad51234f338548b98460b7424e6a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cad51234f338548b98460b7424e6a6, type: 3}
 --- !u!114 &4720597686017588514 stripped

@@ -11,6 +11,9 @@ public class SettingScreen : UIScreen
 
     public void OnLevelButtonPressed(int id)
     {
+        SoundManager.Instance.PlaySound("Click");
+        GameManager.Instance.SetMapIndex(id);
+
         m_levelID = id;
         m_tick.anchoredPosition = m_levelButton[id].anchoredPosition;
     }

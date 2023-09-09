@@ -13,6 +13,7 @@ public class Hex : MonoBehaviour
     private MapManager m_mapManager;
 
     public Number Number => m_number;
+    public Collider2D Collider => m_collider;
     public List<Hex> Neighbors => m_neighbor;
     public bool IsHoldNumber => m_number != null;
 

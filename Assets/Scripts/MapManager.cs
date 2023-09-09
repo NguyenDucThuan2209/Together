@@ -5,17 +5,10 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     [SerializeField] Number m_numberPrefab;
-    [SerializeField] Transform m_numberPlaceHolder;
-    private List<Hex> m_hexList;
+    [SerializeField] Transform m_numberPlace;
+    [SerializeField] Transform m_numberHolder;
 
-    private void Start()
-    {
-        Initialize();
-    }
-    private void Update()
-    {
-        
-    }
+    private List<Hex> m_hexList;
 
     private void DFS(Hex hex, ref List<Hex> visited)
     {
@@ -39,29 +32,39 @@ public class MapManager : MonoBehaviour
 
         if (visited.Count >= 3)
         {
+            int score = 0;
             foreach (var hex in visited)
             {
+                score += hex.Number.ID;
                 if (hex == startHex)
                 {
-                    hex.Number.IncreaseNumber();
+                    continue;
                 }
                 else
                 {
                     hex.MergeWithNumber(startHex.transform);
                 }
             }
-            CollectNeighbor(startHex);
+            GameManager.Instance.ScorePoint(score);
+            startHex.Number.IncreaseNumber(() => CollectNeighbor(startHex));
+        }
+        else
+        {
+            for (int i = 0; i < m_hexList.Count; i++)
+            {
+                if (!m_hexList[i].IsHoldNumber) return;
+            }
+            GameManager.Instance.EndGame();
         }
     }
     private void SpawnNumber()
     {
-        var number = Instantiate(m_numberPrefab, transform);
-        number.InitializeNumber(Random.Range(1, 4));
+        if (GameManager.Instance.State != GameState.Playing) return;
 
-        number.transform.position = m_numberPlaceHolder.position;
+        var number = Instantiate(m_numberPrefab, m_numberHolder);
+        number.InitializeNumber(m_numberPlace, Random.Range(1, 4));
     }
-
-    public void Initialize()
+    private void ResetData()
     {
         m_hexList = new List<Hex>();
         for (int i = 0; i < transform.childCount; i++)
@@ -69,12 +72,27 @@ public class MapManager : MonoBehaviour
             if (transform.GetChild(i).TryGetComponent(out Hex hex))
             {
                 m_hexList.Add(hex);
-                hex.InitializeHex(this);
+                hex.Collider.enabled = true;
             }
         }
+        for (int i = 0; i < m_hexList.Count; i++)
+        {
+            m_hexList[i].InitializeHex(this);
+        }
+        for (int i = 0; i < m_numberHolder.childCount; i++)
+        {
+            Destroy(m_numberHolder.GetChild(i).gameObject);
+        }
+    }
+
+    public void Initialize()
+    {
+        ResetData();
+        SpawnNumber();
     }
     public void AttachNumber(Hex startHex)
     {
         CollectNeighbor(startHex);
+        SpawnNumber();
     }
 }

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 37528941607080155}
   - component: {fileID: 6858116168160054745}
   m_Layer: 5
-  m_Name: MapHardButton
+  m_Name: MapButton_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 461715681680516342}
   - component: {fileID: 2648462640935879603}
   m_Layer: 5
-  m_Name: MapEasyButton
+  m_Name: MapButton_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 957770214336985023}
   - component: {fileID: 5536074728415061385}
   m_Layer: 5
-  m_Name: MapMediumButton
+  m_Name: MapButton_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

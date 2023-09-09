@@ -17,15 +17,19 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Properties")]
     [SerializeField] GameState m_state;
-    [SerializeField] Vector2 m_vertical;
-    [SerializeField] Vector2 m_horizontal;
+    [Header("Game Preferences")]
+    [SerializeField] MapManager[] m_maps;
 
     private int m_score;
     private int m_bestScore;
+    private int m_currentMapIndex;
+
+    private static Vector2 m_vertical;
+    private static Vector2 m_horizontal;
+    public static Vector2 Vertical => m_vertical;
+    public static Vector2 Horizontal => m_horizontal;
 
     public GameState State => m_state;
-    public Vector2 Vertical => m_vertical;
-    public Vector2 Horizontal => m_horizontal;
 
     private void Awake()
     {
@@ -39,15 +43,29 @@ public class GameManager : MonoBehaviour
 
         CalculateScreenSize();
     }
-    private void Update()
-    {
-        if (m_state != GameState.Playing) return;
 
+    private void HideAllMap()
+    {
+        for (int i = 0; i < m_maps.Length; i++)
+        {
+            m_maps[i].gameObject.SetActive(false);
+        }
     }
-
-    private void ResetGameData()
+    private void InitializeGame()
     {
-        
+        m_score = 0;
+        for (int i = 0; i < m_maps.Length; i++)
+        {
+            if (i == m_currentMapIndex)
+            {
+                m_maps[i].gameObject.SetActive(true);
+                m_maps[i].Initialize();
+            }
+            else
+            {
+                m_maps[i].gameObject.SetActive(false);
+            }
+        }
     }
     private void CalculateScreenSize()
     {
@@ -57,30 +75,41 @@ public class GameManager : MonoBehaviour
         m_vertical = new Vector2(bottomLeft.y, upperRight.y);
         m_horizontal = new Vector2(bottomLeft.x, upperRight.x);
     }
-    public void ScorePoint()
+
+    public void ScorePoint(int score = 1)
     {
-        m_score++;
+        m_score += score;
         m_bestScore = (m_bestScore < m_score) ? m_score : m_bestScore;
 
-        SoundManager.Instance.PlaySound("Score");
+        SoundManager.Instance.PlaySound("Merge");
         MenuManager.Instance.SetScore(m_score, m_bestScore);
+    }
+    public void SetMapIndex(int index)
+    {
+        m_currentMapIndex = (index < m_maps.Length)? index : m_currentMapIndex;
     }
 
     public void StartGame()
     {
         Debug.LogWarning("Start Game");
-
-        ResetGameData();
         m_state = GameState.Playing;
+
+        InitializeGame();
     }
     public void EndGame()
     {
         Debug.LogWarning("End Game");
-
         m_state = GameState.End;
 
-        ResetGameData();
+        HideAllMap();
         MenuManager.Instance.EndGame();
+    }
+    public void ExitGame()
+    {
+        Debug.LogWarning("Exit Game");
+        m_state = GameState.End;
+
+        HideAllMap();
     }
 
     #region IENumerator

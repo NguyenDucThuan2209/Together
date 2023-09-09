@@ -10,6 +10,7 @@ public class Number : MonoBehaviour
     [SerializeField] SpriteRenderer m_sprite;
     [SerializeField] Sprite[] m_numberSprite;
 
+    private Transform m_place;
     private List<Hex> m_collisions = new List<Hex>();
 
     public int ID => m_id;
@@ -40,8 +41,14 @@ public class Number : MonoBehaviour
 
         if (index >= 0)
         {
+            SoundManager.Instance.PlaySound("Place");
+
             transform.position = m_collisions[index].transform.position;
             m_collisions[index].OnAttachNumber(this);
+        }
+        else
+        {
+            MoveToDefault();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,25 +59,38 @@ public class Number : MonoBehaviour
         }
     }
 
-    private void Increase()
+    private void Increase(System.Action callbacks = null)
     {
         transform.localScale = m_size;
         m_sprite.sprite = m_numberSprite[m_id - 1];
+
+        callbacks?.Invoke();
+    }
+    private void MoveToDefault()
+    {
+        var targetPos = m_place.position;
+        var startPos = transform.position;
+        StartCoroutine(GameManager.IE_Translate(transform, startPos, targetPos, 0.15f));
     }
 
-    public void IncreaseNumber()
+    public void IncreaseNumber(System.Action callbacks = null)
     {
         m_id++;
-        StartCoroutine(GameManager.IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Increase()));
+        StartCoroutine(GameManager.IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Increase(callbacks)));
     }
     public void MergeWithNumber(Transform target)
     {
         StartCoroutine(GameManager.IE_Translate(transform, transform.position, target.position, 0.25f));
         StartCoroutine(GameManager.IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Destroy(gameObject)));
     }
-    public void InitializeNumber(int id = -1)
+    public void InitializeNumber(Transform place, int id = -1)
     {
         m_id = (id > 0) ? id : m_id;
         m_sprite.sprite = m_numberSprite[id - 1];
+
+        m_place = place;
+        var targetPos = m_place.position;
+        var startPos = new Vector3(0f, GameManager.Vertical.x, 0f);
+        StartCoroutine(GameManager.IE_Translate(transform, startPos, targetPos, 0.15f));
     }
 }

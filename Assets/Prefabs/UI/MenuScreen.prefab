@@ -342,6 +342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_panel: {fileID: 992964148655554373}
   m_bestScore: {fileID: 992964147158313235}
+  m_soundButton: {fileID: 2179996083984164226}
+  m_musicButton: {fileID: 1431921042727507097}
 --- !u!1 &992964148655554373
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +454,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -972479133, guid: 6dc5f9215b9558446afacb18deefbd66, type: 3}
+  m_Sprite: {fileID: -2116086096, guid: 6dc5f9215b9558446afacb18deefbd66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -578,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -641,7 +643,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 992964147403687016}
         m_TargetAssemblyTypeName: MenuScreen, Assembly-CSharp
-        m_MethodName: OnSettingButtonPressed
+        m_MethodName: OnSoundButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -774,7 +776,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 992964147403687016}
         m_TargetAssemblyTypeName: MenuScreen, Assembly-CSharp
-        m_MethodName: OnSettingButtonPressed
+        m_MethodName: OnMusicButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

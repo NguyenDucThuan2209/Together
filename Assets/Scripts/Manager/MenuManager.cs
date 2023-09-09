@@ -66,6 +66,8 @@ public class MenuManager : MonoBehaviour
     {
         HideAllScreen();
         m_menuScreen.ShowScreen();
+
+        GameManager.Instance.ExitGame();
     }
 
     public void SetScore(int score, int highScore)

@@ -783,6 +783,8 @@ MonoBehaviour:
   m_panel: {fileID: 6795463770039612596}
   m_scoreText: {fileID: 6795463770324419180}
   m_highScoreText: {fileID: 0}
+  m_soundButton: {fileID: 757325150363583858}
+  m_musicButton: {fileID: 4019157431656834001}
 --- !u!1 &6795463771749310322
 GameObject:
   m_ObjectHideFlags: 0
