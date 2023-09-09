@@ -682,7 +682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_panel: {fileID: 5251339768576827108}
   m_scoreText: {fileID: 5251339768802648649}
-  m_bestScoreText: {fileID: 0}
+  m_bestScoreText: {fileID: 3081893745875896558}
   m_soundButton: {fileID: 5161353863083332752}
   m_musicButton: {fileID: 3593715056116139615}
 --- !u!1 &5251339768576827108

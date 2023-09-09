@@ -72,8 +72,8 @@ public class MenuManager : MonoBehaviour
 
     public void SetScore(int score, int highScore)
     {
-        m_ingameScreen.SetScoreText(score);
         m_endGameScreen.SetScoreText(score);
         m_menuScreen.SetHighScore(highScore);
+        m_ingameScreen.SetScoreText(score, highScore);
     }
 }

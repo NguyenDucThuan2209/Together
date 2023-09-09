@@ -40,7 +40,7 @@ public class IngameScreen : UIScreen
         {
             m_bestScoreText.rectTransform.anchoredPosition = new Vector2(45, 55);
         }
-        m_bestScoreText.text = "BEST " + highScore;
+        m_bestScoreText.text = highScore.ToString();
     }
 
     public void OnHomeButtonPressed()
