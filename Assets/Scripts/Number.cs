@@ -52,30 +52,6 @@ public class Number : MonoBehaviour
         }
     }
 
-    private IEnumerator IE_Translate(Transform obj, Vector3 start, Vector3 end, float duration, System.Action callbacks = null)
-    {
-        float t = 0;
-        while (t < duration)
-        {
-            obj.position = Vector3.Lerp(start, end, t / duration);
-            t += Time.deltaTime;
-            yield return null;
-        }
-        obj.position = end;
-        callbacks?.Invoke();
-    }
-    private IEnumerator IE_Scale(Transform obj, Vector3 start, Vector3 end, float duration, System.Action callbacks = null)
-    {
-        float t = 0;
-        while (t < duration)
-        {
-            obj.localScale = Vector3.Lerp(start, end, t / duration);
-            t += Time.deltaTime;
-            yield return null;
-        }
-        obj.localScale = end;
-        callbacks?.Invoke();
-    }
     private void Increase()
     {
         transform.localScale = m_size;
@@ -85,12 +61,12 @@ public class Number : MonoBehaviour
     public void IncreaseNumber()
     {
         m_id++;
-        StartCoroutine(IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Increase()));
+        StartCoroutine(GameManager.IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Increase()));
     }
     public void MergeWithNumber(Transform target)
     {
-        StartCoroutine(IE_Translate(transform, transform.position, target.position, 0.25f));
-        StartCoroutine(IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Destroy(gameObject)));
+        StartCoroutine(GameManager.IE_Translate(transform, transform.position, target.position, 0.25f));
+        StartCoroutine(GameManager.IE_Scale(transform, m_size, Vector3.zero, 0.25f, () => Destroy(gameObject)));
     }
     public void InitializeNumber(int id = -1)
     {

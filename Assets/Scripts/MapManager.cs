@@ -5,25 +5,18 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     [SerializeField] Number m_numberPrefab;
+    [SerializeField] Transform m_numberPlaceHolder;
     private List<Hex> m_hexList;
 
     private void Start()
     {
         Initialize();
     }
-
-    private void Initialize()
+    private void Update()
     {
-        m_hexList = new List<Hex>();
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            if (transform.GetChild(i).TryGetComponent(out Hex hex))
-            {
-                m_hexList.Add(hex);
-                hex.InitializeHex(this);
-            }
-        }
+        
     }
+
     private void DFS(Hex hex, ref List<Hex> visited)
     {
         visited.Add(hex);
@@ -39,8 +32,7 @@ public class MapManager : MonoBehaviour
             }
         }
     }
-
-    public void AttachNumber(Hex startHex)
+    private void CollectNeighbor(Hex startHex)
     {
         var visited = new List<Hex>();
         DFS(startHex, ref visited);
@@ -58,7 +50,31 @@ public class MapManager : MonoBehaviour
                     hex.MergeWithNumber(startHex.transform);
                 }
             }
-            AttachNumber(startHex);
+            CollectNeighbor(startHex);
         }
+    }
+    private void SpawnNumber()
+    {
+        var number = Instantiate(m_numberPrefab, transform);
+        number.InitializeNumber(Random.Range(1, 4));
+
+        number.transform.position = m_numberPlaceHolder.position;
+    }
+
+    public void Initialize()
+    {
+        m_hexList = new List<Hex>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).TryGetComponent(out Hex hex))
+            {
+                m_hexList.Add(hex);
+                hex.InitializeHex(this);
+            }
+        }
+    }
+    public void AttachNumber(Hex startHex)
+    {
+        CollectNeighbor(startHex);
     }
 }
