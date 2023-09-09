@@ -7,7 +7,8 @@ public class IngameScreen : UIScreen
 {
     [SerializeField] Text m_scoreText;
     [SerializeField] Text m_bestScoreText;
-
+    [SerializeField] Button m_soundButton;
+    [SerializeField] Button m_musicButton;
     private bool m_soundState = false;
     private bool m_musicState = false;
 
@@ -17,6 +18,9 @@ public class IngameScreen : UIScreen
 
         m_soundState = SoundManager.Instance.SoundState;
         m_musicState = SoundManager.Instance.MusicState;
+
+        m_soundButton.image.color = (m_soundState) ? new Color(1f, 1f, 1f, 0.5f) : new Color(1f, 1f, 1f, 1f);
+        m_musicButton.image.color = (m_musicState) ? new Color(1f, 1f, 1f, 0.5f) : new Color(1f, 1f, 1f, 1f);
     }
     public void SetScoreText(int score, int highScore = -1)
     {
@@ -52,6 +56,7 @@ public class IngameScreen : UIScreen
     public void OnSoundButtonPressed()
     {
         m_soundState = !m_soundState;
+        m_soundButton.image.color = (m_soundState) ? new Color(1f, 1f, 1f, 0.5f) : new Color(1f, 1f, 1f, 1f);
 
         SoundManager.Instance.PlaySound("Click");
         SoundManager.Instance.SetSoundState(m_soundState);
@@ -59,6 +64,8 @@ public class IngameScreen : UIScreen
     public void OnMusicButtonPressed()
     {
         m_musicState = !m_musicState;
+        m_musicButton.image.color = (m_musicState) ? new Color(1f, 1f, 1f, 0.5f) : new Color(1f, 1f, 1f, 1f);
+
         SoundManager.Instance.PlaySound("Click");
         SoundManager.Instance.SetMusicState(m_musicState);
     }
